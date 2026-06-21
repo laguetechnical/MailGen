@@ -118,10 +118,16 @@ Available from the [GitHub Releases](../../releases) page.
 ```bash
 git clone https://github.com/laguetechnical/MailGen
 cd mailgen
-pip install -e .
+pip install --break-system-packages -e .
 ```
 
 This installs `mailgen` as a CLI command (via the project's `pyproject.toml`) and pulls in its dependencies: `telethon` and `rich`.
+> If you're facing issue in installing , try :
+>```bash
+>git clone https://github.com/laguetechnical/MailGen
+>cd mailgen
+>pip install -e .
+>```
 
 ---
 
