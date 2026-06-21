@@ -66,7 +66,7 @@
 ### Install
 
 ```bash
-git clone <your-repo-url> mailgen
+git clone https://github.com/laguetechnical/MailGen/ mailgen
 cd mailgen
 pip install -e .
 ```
