@@ -116,18 +116,12 @@ Available from the [GitHub Releases](../../releases) page.
 ### Install
 
 ```bash
-git clone <your-repo-url> mailgen
+git clone https://github.com/laguetechnical/MailGen
 cd mailgen
 pip install -e .
 ```
 
 This installs `mailgen` as a CLI command (via the project's `pyproject.toml`) and pulls in its dependencies: `telethon` and `rich`.
-
-> If you're not packaging it yet and just want to run it directly:
-> ```bash
-> pip install telethon rich
-> python -m mailgen
-> ```
 
 ---
 
