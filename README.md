@@ -1,8 +1,8 @@
-# mailgen
+# LT-MailGen
 
-**FakeMail Telegram Bot Automation — Kali/Linux CLI edition**
+**FakeMail Telegram Bot Automation CLI**
 
-`mailgen` wraps interaction with Telegram's `@fakemailbot` behind a proper, scriptable command-line tool. Generate temporary email addresses, pull your inbox, live-monitor incoming mail, and manage everything from your terminal — no manual back-and-forth in the Telegram app required.
+`LT-MailGen` wraps interaction with Telegram's `@fakemailbot` behind a proper, scriptable command-line tool. Generate temporary email addresses, pull your inbox, live-monitor incoming mail, and manage everything from your terminal — no manual back-and-forth in the Telegram app required. Ships as an installable CLI package, plus portable single-file versions for environments where installing a package isn't an option.
 
 ```
 ███╗   ███╗ █████╗ ██╗██╗      ██████╗ ███████╗███╗   ██╗
@@ -32,6 +32,56 @@
 - 🩺 Built-in diagnostics (`doctor`) for config/session/connectivity issues
 - 🌐 Optional SOCKS5 proxy support
 - 🔒 Config stored with `chmod 600` — credentials aren't world-readable
+
+---
+
+## Screenshots
+
+| Menu | Setup | Inbox |
+|---|---|---|
+| ![Menu](screenshots/menu.png) | ![Setup](screenshots/setup.png) | ![Inbox](screenshots/inbox.png) |
+
+---
+
+## Available Versions
+
+### LT-MailGen (Main)
+
+The full Linux CLI/TUI package — configuration management, session persistence, logging, and exports. This is what the rest of this README documents.
+
+```bash
+pip install -e .
+mailgen
+```
+
+### LT-MailGen Portable CLI
+
+Single-file version with no installation step, for environments where you can't (or don't want to) install a package:
+
+- Windows CMD / PowerShell
+- Termux (Android)
+- Pydroid 3 (Android)
+
+```bash
+python LT-MailGen-Portable-CLI.py
+```
+
+### LT-MailGen Portable TUI
+
+Single-file version with the same scope as the Portable CLI, wrapped in a terminal UI:
+
+```bash
+python LT-MailGen-Portable-TUI.py
+```
+
+### Downloads
+
+Latest release assets:
+
+- `LT-MailGen-Portable-CLI.py`
+- `LT-MailGen-Portable-TUI.py`
+
+Available from the [GitHub Releases](../../releases) page.
 
 ---
 
@@ -66,12 +116,12 @@
 ### Install
 
 ```bash
-git clone https://github.com/laguetechnical/MailGen/ mailgen
+git clone <your-repo-url> mailgen
 cd mailgen
 pip install -e .
 ```
 
-This installs `mailgen` as a CLI command (via the project's `setup.py`/`pyproject.toml`) and pulls in its dependencies: `telethon` and `rich`.
+This installs `mailgen` as a CLI command (via the project's `pyproject.toml`) and pulls in its dependencies: `telethon` and `rich`.
 
 > If you're not packaging it yet and just want to run it directly:
 > ```bash
@@ -218,3 +268,9 @@ Everything lives under `~/.config/mailgen/`:
 - All secrets (`config.json`) are written with `chmod 600` — owner read/write only.
 - This tool only automates *your own* Telegram session against a public bot you already use; it doesn't touch anyone else's account or bypass any authentication.
 - Domain options for generated addresses are currently `@hi2.in` and `@telegmail.com`, matching whatever `@fakemailbot` offers — these are bot-side and not configurable from `mailgen` itself.
+
+---
+
+## License
+
+MIT License
